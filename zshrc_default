@@ -1,0 +1,63 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory autocd beep extendedglob nomatch
+bindkey -e
+
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+
+zstyle :compinstall filename '/home/maharshi/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+source ~/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+antigen bundle virtualenv
+# antigen bundle virtualenvwrapper
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle joel-porquet/zsh-dircolors-solarized.git
+
+# Load the theme.
+antigen theme honukai
+
+# Tell Antigen that you're done.
+antigen apply
+
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/local/cuda/lib64
+
+export PATH=$PATH:/usr/local/cuda-8.0/bin
+
+alias mars_jupyter='jupyter notebook --ip=0.0.0.0 --port=9500 --no-browser'
+alias zshconfig='gedit ~/.zshrc'
+alias bashconfig='gedit ~/.bashrc'
+
+. /usr/local/bin/virtualenvwrapper.sh
+
+alias clr=clear
+
+function tboard()
+{
+	tensorboard --logdir=./logs --port=$1
+}
+
+function csview()
+{
+	cat $1 | column -t -s, | less -S
+}
