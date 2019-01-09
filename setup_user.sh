@@ -15,7 +15,7 @@ echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.zshrc
 pip install numpy scipy matplotlib scikit-learn opencv-python jupyter ipython requests
 
 sudo apt-get install zsh
-sudo cp zshrc_default ~/.zshrc
+cp zshrc_default ~/.zshrc
 
 chsh -s $(which zsh)
 
