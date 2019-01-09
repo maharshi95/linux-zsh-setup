@@ -23,4 +23,4 @@ chsh -s $(which zsh)
 curl -L git.io/antigen > ~/antigen.zsh
 wget https://raw.githubusercontent.com/oskarkrawczyk/honukai-iterm/master/honukai.zsh-theme
 
-zsh zsh_run.sh
+# zsh zsh_run.sh
